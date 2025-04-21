@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <h1>Weather</h1>
+    <form>
+      <input type="text" value="" id="city" />
+      <button type="submit" onclick="citysearch(event)">Search</button>
+      <ul id="results"></ul>
+    </form>
+    <script>
+      const rapidKey = "3a5241315amsh478d4394adde39bp1c53b8jsn69df6c75e7ed";
+      const citysearch = (event) => {
+        event.preventDefault();
+        const city = document.getElementById("city").value;
+        const rapidUrl = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${city}&limit=5`;
+        fetch(rapidUrl, {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+            "x-rapidapi-key": rapidKey,
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const results = data.data;
+            const ul = document.getElementById("results");
+            ul.innerHTML = "";
+            results.forEach((city) => {
+              const li = document.createElement("li");
+              li.textContent = `${city.name}, ${city.countryCode} (lat: ${city.latitude}, lon: ${city.longitude})`;
+              li.onclick = () => getWeather(city.latitude, city.longitude);
+              ul.appendChild(li);
+            });
+          });
+      };
+
+      const apikey = "8ca54f8f7c7dc0c429249622fb161dd9";
+      function getWeather(lat, lon) {
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}`;
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            document.body.innerHTML = `<h2>${data.name}</h2><p>Humidity : ${data.weather[0].description}</p> <p>lon : ${data.coord.lon}</p> <p>lat : ${data.coord.lat}</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>

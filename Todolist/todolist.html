@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todolist</title>
+    <link rel="stylesheet" href="todolist.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1>Dashbaord</h1>
+    </div>
+    <div class="content">
+      <h1>Dashbaord</h1>
+      <div class="chart"></div>
+      <form id="form" onsubmit="formsubmit(event)">
+        <h1>Todo List</h1>
+
+        <input type="text" id="task" placeholder="Enter a task" />
+        <input
+          type="text"
+          id="description"
+          placeholder="Enter task description"
+        />
+
+        <input type="date" id="start-date" placeholder="Start date" />
+        <input type="time" id="start-time" placeholder="Start time" />
+
+        <input type="date" id="end-date" placeholder="End date" />
+        <input type="time" id="end-time" placeholder="End time" />
+
+        <button id="add" type="submit">Add Task</button>
+      </form>
+
+      <div>
+        TODO LIST
+        <ul id="todo-list"></ul>
+      </div>
+      <div>
+        Completed Tasks
+        <ul id="completed"></ul>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
