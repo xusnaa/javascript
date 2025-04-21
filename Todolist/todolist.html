@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="todolist.css" />
   </head>
   <body>
-    <div class="sidebar">
-      <h1>Dashbaord</h1>
-    </div>
+    <!-- sidebar -->
+    <div class="sidebar"></div>
+    <!-- Main Content -->
     <div class="content">
-      <h1>Dashbaord</h1>
-      <div class="chart"></div>
+      <div class="header">
+        <h1>Dashbaord</h1>
+        <button class="buttonTask">Add Task +</button>
+      </div>
+
+      <!-- charts -->
+      <div class="chart">
+        <div class="chartcards"></div>
+        <div class="chartcards"></div>
+        <div class="chartcards"></div>
+      </div>
       <form id="form" onsubmit="formsubmit(event)">
         <h1>Todo List</h1>
 
