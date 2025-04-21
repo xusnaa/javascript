@@ -28,3 +28,9 @@ function formsubmit(event) {
   };
   document.querySelector("form").reset();
 }
+
+function showTaskForm() {
+  const button = document.getElementsByClassName("buttonTask");
+  button.onclick = () =>
+    (document.querySelector("form").style.display = "flex");
+}
