@@ -31,7 +31,7 @@ body {
 .chartcards {
   width: 400px;
   height: 250px;
-  background-color: #301934;
+  background-color: #ccc;
   border-radius: 25px;
 }
 .content {
