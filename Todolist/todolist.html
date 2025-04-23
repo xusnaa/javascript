@@ -20,13 +20,19 @@
       <div class="chart">
         <div
           class="chartcards"
-          style="background: linear-gradient(to right, #00ced1, #008b8b)"
+          style="background: linear-gradient(to right, #000000, #301934)"
         ></div>
-        <div class="chartcards"></div>
+        <div
+          class="chartcards"
+          style="background-color: #f4f2f1; color: #000000"
+        ></div>
         <div class="chartcards"></div>
       </div>
       <form id="form" onsubmit="formsubmit(event)">
-        <h1>Todo List</h1>
+        <div class="formHeader">
+          <h1>Todo List</h1>
+          <button onclick="showTaskForm()">X</button>
+        </div>
 
         <input type="text" id="task" placeholder="Enter a task" />
         <input
@@ -41,18 +47,15 @@
         <input type="date" id="end-date" placeholder="End date" />
         <input type="time" id="end-time" placeholder="End time" />
 
-        <button id="add" type="submit">Add Task</button>
+        <button class="buttonTask" id="add" type="submit">Add Task</button>
       </form>
 
       <div class="taskSection">
-        <div
-          class="todocard"
-          style="background: linear-gradient(to right, #00ced1, #008b8b)"
-        >
+        <div class="todocard" style="background-color: #301934">
           Completed tasks
           <ul id="todo-list"></ul>
         </div>
-        <div class="todocard">
+        <div class="todocard" style="color: #000000">
           Pending tasks
           <ul id="completed"></ul>
         </div>

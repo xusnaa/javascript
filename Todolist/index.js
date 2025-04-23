@@ -23,14 +23,20 @@ function formsubmit(event) {
   buttonDone.onclick = () => {
     const ul2 = document.getElementById("completed");
     const completedli = document.createElement("li");
-    completedli.textContent = li.textContent.replace("Done,Delete", "").trim();
-    ul2.appendChild(completedlili);
+    completedli.textContent = tasklist.join("");
+    ul2.appendChild(completedli);
+    li.remove();
+  };
+  buttonDelete.onclick = () => {
+    li.remove();
   };
   document.querySelector("form").reset();
 }
 
 function showTaskForm() {
-  const button = document.getElementsByClassName("buttonTask");
-  button.onclick = () =>
-    (document.querySelector("form").style.display = "flex");
+  if (form.style.display === "flex") {
+    form.style.display = "none";
+  } else {
+    form.style.display = "flex";
+  }
 }
