@@ -23,13 +23,20 @@
       <div class="chart">
         <div
           class="chartcards"
-          style="background: linear-gradient(to right, #000000, #301934)"
-        ></div>
+          style="
+            background: linear-gradient(to right, #000000, #301934);
+            color: white;
+          "
+        >
+          Achivements
+        </div>
         <div
           class="chartcards"
           style="background-color: #f4f2f1; color: #000000"
-        ></div>
-        <div class="chartcards"></div>
+        >
+          Completed
+        </div>
+        <div class="chartcards">Remaining</div>
       </div>
       <form id="form" onsubmit="formsubmit(event)">
         <div class="formHeader">
@@ -54,11 +61,11 @@
       </form>
 
       <div class="taskSection">
-        <div class="todocard" style="background-color: #301934">
+        <div class="todocard" style="backdrop-filter: blur(5px)">
           Completed tasks
           <ul id="todo-list"></ul>
         </div>
-        <div class="todocard" style="color: #000000">
+        <div class="todocard">
           Pending tasks
           <ul id="completed"></ul>
         </div>
