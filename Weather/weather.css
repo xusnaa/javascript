@@ -5,7 +5,59 @@ body {
   width: 100%;
   margin: 0%;
 }
+.content {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-#city {
+  gap: 2rem;
+}
+form {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+form input {
+  border-radius: 50px;
   width: 60%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  color: #cbd5e1;
+  padding: 1rem;
+}
+.cards {
+  padding: 1rem;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 2px solid black;
+  color: #cbd5e1;
+  width: 400px;
+  height: 300px;
+}
+.weatherCards {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr;
+  gap: 7px;
+}
+.lowercards {
+  display: flex;
+  gap: 20px;
+}
+.forecast {
+  width: 500px;
+  min-height: 500px;
+  background-color: rgb(255, 250, 255, 0.08);
+
+  border-radius: 10px;
+}
+.lowercards .cards {
+  min-height: 500px;
+  flex-grow: 1;
 }
