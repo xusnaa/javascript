@@ -1,5 +1,5 @@
 body {
-  background-color: #0a0a0a;
+  background-color: #4b5563;
   color: #cbd5e1;
   height: 100%;
   width: 100%;
@@ -10,19 +10,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 10;
 
   gap: 2rem;
 }
 form {
   display: flex;
-
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 form input {
   border-radius: 50px;
   width: 60%;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,30 +31,41 @@ form input {
   color: #cbd5e1;
   padding: 1rem;
 }
+.results {
+  background-color: rgba(255, 250, 255, 0.08);
+  color: bisque;
+  width: 60%;
+}
+
 .cards {
   padding: 1rem;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1); /* light transparent */
   border-radius: 20px;
-  border: 2px solid black;
+
   color: #cbd5e1;
-  width: 400px;
+  width: 700px;
   height: 300px;
+
+  backdrop-filter: blur(10px); /* makes it "frosted" */
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
 }
 .weatherCards {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 2fr;
-  gap: 7px;
+  display: flex;
+  justify-content: space-between;
 }
 .lowercards {
   display: flex;
   gap: 20px;
 }
 .forecast {
+  padding: 10px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 500px;
   min-height: 500px;
   background-color: rgb(255, 250, 255, 0.08);
-
   border-radius: 10px;
 }
 .lowercards .cards {

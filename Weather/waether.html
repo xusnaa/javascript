@@ -9,58 +9,23 @@
   <body>
     <div class="content">
       <form>
-        <input type="text" value="" id="city" placeholder="Search city..." />
-        <button type="submit" onclick="citysearch(event)">Search</button>
-        <ul id="results"></ul>
+        <input type="text" value="" id="city" placeholder="Search city..."  autocomplete="off"/>
+       
+        <ul id="results" class="results"></ul>
       </form>
       <div class="weatherCards">
-        <div class="cards"></div>
-        <div class="cards"></div>
+        <div class="cards" id="description"></div>
+        <div class="cards" id="tempreature"></div>
       </div>
       <div class="lowercards">
       <div class="forecast">7 day forecast</div>
-      <div class="cards"></div>
+      <div class="cards" id="forecast"></div>
       </div>
       
     </div>
     </div>
-    <script>
-      const rapidKey = "3a5241315amsh478d4394adde39bp1c53b8jsn69df6c75e7ed";
-      const citysearch = (event) => {
-        event.preventDefault();
-        const city = document.getElementById("city").value;
-        const rapidUrl = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${city}&limit=5`;
-        fetch(rapidUrl, {
-          method: "GET",
-          headers: {
-            "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-            "x-rapidapi-key": rapidKey,
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            const results = data.data;
-            const ul = document.getElementById("results");
-            ul.innerHTML = "";
-            results.forEach((city) => {
-              const li = document.createElement("li");
-              li.textContent = `${city.name}, ${city.countryCode} (lat: ${city.latitude}, lon: ${city.longitude})`;
-              li.onclick = () => getWeather(city.latitude, city.longitude);
-              ul.appendChild(li);
-            });
-          });
-      };
-
-      const apikey = "8ca54f8f7c7dc0c429249622fb161dd9";
-      function getWeather(lat, lon) {
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}`;
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            document.body.innerHTML = `<h2>${data.name}</h2><p>Humidity : ${data.weather[0].description}</p> <p>lon : ${data.coord.lon}</p> <p>lat : ${data.coord.lat}</p>`;
-          });
-      }
+    <script src="./index.js">
+      
     </script>
   </body>
 </html>
