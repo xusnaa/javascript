@@ -37,7 +37,7 @@ function getWeather(lat, lon) {
     .then((data) => {
       console.log(data);
       const weatherDescription = document.getElementById("tempreature");
-      weatherDescription.textContent = `<div>${data.main.temp}</div>`;
+      weatherDescription.textContent = `<div>${data.main.temp} ${data.weather[0].description}</div>`;
       //   document.body.innerHTML = `<h2>${data.name}</h2><p>Humidity : ${data.weather[0].description}</p> <p>lon : ${data.coord.lon}</p> <p>lat : ${data.coord.lat}</p>`;
     });
 }
